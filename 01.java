@@ -43,3 +43,43 @@ public class bubblesort
 
 
 
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static ArrayList<Integer> leaders(int[] arr){
+        ArrayList<Integer> rl = new ArrayList<>();
+        int i,j,n;
+        n = arr.length;
+        
+        for(i=0;i<n;i++) {
+            for(j=i+1;j<n;j++){
+                if(arr[i]<arr[j])
+                    break;
+            }
+            if (j==n)
+                rl.add(arr[i]);
+        }
+        return rl;
+    }
+    public static void main(String[] args) {
+        int i,j;
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println();
+        for(i = 0;i<n;i++)
+        {
+            j = sc.nextInt();
+            arr[i] = j;
+        }
+        ArrayList<Integer> rl = leaders(arr);
+        for (int rs : rl) {
+            System.out.print(rs + " ");
+        }
+        System.out.println();
+    }
+}
+
+
