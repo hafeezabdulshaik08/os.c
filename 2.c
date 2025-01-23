@@ -35,3 +35,57 @@ int main(){
 		printf("\n the child process ID is %d\n", pid2);
 	}	
 }		
+
+
+/*#include<stdio.h>
+#include<fcntl.h>
+#include<unistd.h>
+int main(int argc,char *argv[]){
+	FILE *fp;char ch;int sc=0;
+	fp=fopen(argv[1],"r");
+	if(fp==NULL)
+		printf("unable to open a file%s",argv[1]);
+		else
+		{
+		whlie(!feof(fp)){
+			ch=fgetc(fp);
+			if(ch==' ')
+				sc++;
+		}
+		printf("no of spaces%d",sc);
+		printf("\n");
+		printf(fp);
+	}
+}		*/
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[]) {
+    FILE *fp;
+    char ch;
+    int sc = 0;
+
+    if (argc < 2) {
+        printf("Usage: %s <filename>\n", argv[0]);
+        return 1;  // Exit if filename is not provided.
+    }
+
+    fp = fopen(argv[1], "r");
+    if (fp == NULL) {
+        printf("Unable to open the file %s\n", argv[1]);
+        return 1;
+    } else {
+        while ((ch = fgetc(fp)) != EOF) {  // Read until the end of file.
+            if (ch == ' ') {
+                sc++;
+            }
+        }
+
+        printf("Number of spaces: %d\n", sc);
+        fclose(fp);  // Close the file after processing.
+    }
+
+    return 0;
+}
+			
