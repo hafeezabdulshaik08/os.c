@@ -89,3 +89,55 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 			
+
+
+
+#include <stdio.h>
+22 #include <fcntl.h>
+23 #include < unistd.h>
+24 int main(int argc, char *argvIl) {
+25
+FILE *fp;
+26
+char ch;
+27
+int sc = 0;
+28
+if (argc < 2) {
+29
+printf("Usage: %s ‹filename>\n", argv[01);
+30
+return 1; // Exit if filename is not provided.
+31
+32
+33
+34
+35
+36
+37
+38
+39
+fp = fopen(argv[1], "r");
+if (fp == NULL) {
+printf("Unable to open the file %s\n", argv[11);
+return 1;
+} else 1
+while ((ch = fetc(fp)) |= EOF) { // Read until the end of file.
+if (ch == '') ( sc++;
+40
+41
+42
+43
+44
+printf("Number of spaces: %d\n", sc);
+fclose(fp); // Close the file after processing.
+45
+46}
+return
+
+
+
+
+
+
+
