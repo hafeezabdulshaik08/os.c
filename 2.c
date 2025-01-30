@@ -133,11 +133,24 @@ printf("Number of spaces: %d\n", sc);
 fclose(fp); // Close the file after processing.
 45
 46}
-return
 
 
 
 
-
-
+#include<fentl.h> #include<unistd.h> #include<stdio.h>
+main(int argc,char *argy])
+{
+FILE *fp;char ch; int sc=0; fp=fopen(argv[1]."*");
+if(fp=NULL)
+printf("unable to open a file",argv[1]);
+else
+while(!feof(fp))
+ch=fgetc(fp):
+if(ch=')
+}
+printf("no of spaces %d".
+,sc);
+printf("n"):
+fclose(fp);
+}
 
